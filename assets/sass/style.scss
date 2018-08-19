@@ -1,0 +1,42 @@
+@import 'compass';
+@import 'compass/support';
+
+/* ======================================================================
+ common style index
+・reset
+・setting
+・mixin
+・base
+・sprite
+・utility
+・component
+・layout
+・z-index
+====================================================================== */
+
+// リセット
+@import 'reset';
+
+// セッティング
+@import 'setting';
+
+// ミックスイン
+@import 'mixin';
+
+// ベース
+@import 'base';
+
+// スプライト
+@import 'sprite';
+
+// 汎用クラス
+@import 'utility';
+
+// コンポーネント
+@import 'component';
+
+// レイアウト
+@import 'layout';
+
+// z-index
+@import 'z-index';

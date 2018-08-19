@@ -1,0 +1,115 @@
+
+
+@mixin mq_pc{
+	@media screen and (min-width: 769px) {
+		@content;
+	}
+}
+@mixin mq_sp{
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+
+@mixin mq_tb{
+	@media screen and (min-width: 769px) and (max-width: 1100px) {
+		@content;
+	}
+}
+
+@mixin mq_tbsp{
+	@media screen and (max-width: 1100px) {
+		@content;
+	}
+}
+@mixin mq_pcl{
+	@media screen and (min-width: 1101px) {
+		@content;
+	}
+}
+
+@mixin mq_pcll{
+	@media screen and (min-width: 1920px) {
+		@content;
+	}
+}
+
+@mixin mq_pcw{
+	@media screen and (min-width: 1401px) {
+		@content;
+	}
+}
+
+@mixin mq_keyvisual{
+	@media screen and (min-width: 2130px) {
+		@content;
+	}
+}
+
+
+//org
+@mixin fuwari($tm) {
+	@include transition(all $tm linear);
+}
+
+@mixin tb_center{
+	@include translateY(-50%);
+	position: absolute;
+	top: 50%;
+
+}
+
+@mixin pc{
+	display:block;
+	@include mq_sp {
+		display: none;
+	}
+}
+
+@mixin sp{
+	display:none;
+	@include mq_sp {
+		display: block;
+	}
+}
+
+@mixin noto {
+	font-family: $noto-font;
+}
+@mixin josefin {
+	font-family: $josefin_font;
+}
+@mixin josefin_noto {
+	font-family: $josefin_noto_font;
+
+}
+@mixin flexcenter {
+	@include flexbox;
+	@include flex-wrap(wrap);
+	@include justify-content(space-between);
+}
+
+
+
+@mixin shizumu_btn {
+	&:hover{
+		@include fuwari(.05s);
+		@include translateY(10px);
+		&:after {
+			height: 0;
+			@include fuwari(.05s);
+		}
+	}
+}
+
+@mixin ttl_parts {
+	font-size:$fs_ttl; //24px
+	font-weight: bold;
+	line-height: 1.2;
+	letter-spacing:1px;
+	color:$color_1;
+
+}
+
+
