@@ -104,6 +104,43 @@ add_action( 'manage_pages_custom_column', 'add_page_column', 10, 2);
  カスタム投稿
 ====================================================================== */
 
+// news
+add_action('init', 'news');
+function news(){
+  $args = array(
+    'label' => '新着情報',
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'query_var' => true,
+    'rewrite' => true,
+    'has_archive' => true,
+    'capability_type' => 'post',
+    'hierarchical' => true,
+    'menu_position' => 5,
+    'supports' => array('title','editor','thumbnail','revisions'),
+    'rewrite' => array(
+      'slug' => 'news',
+      'with_front' => false
+    ),
+    'menu_icon' => 'dashicons-format-aside',
+  );
+  register_post_type('news',$args);
+
+  //分類を追加
+  $args = array(
+    'label' => 'カテゴリー',
+    'public' => true,
+    'show_ui' => true,
+    'hierarchical' => true,
+    'query_var'=> true,
+    'rewrite' => array(
+      'slug' => 'news/category',
+      'with_front' => false
+    )
+  );
+  register_taxonomy('news_cat','news',$args);
+}
 
 /* ======================================================================
  その他設定
